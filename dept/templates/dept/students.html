@@ -1,0 +1,31 @@
+{% extends 'dept/base.html' %}
+{% block title_block %}
+<h1 style="width: 250px; margin:5rem auto">All Students</h1>
+{% endblock %}
+
+{% block main_block %}
+<a class='btn btn-primary' href="/dept/newstd">Add New Student</a>
+<table class="table table-striped" border="2" style="margin:15px auto">
+  <th>Fname</th>
+  <th>Lname</th>
+  <th>Age</th>
+  <th>Track</th>
+  <th>Graduated</th>
+  <th colspan="2">Actions</th>
+  {% for std in allstudents %}
+  <tr>
+    <td><a href="/dept/student/{{std.id}}">{{std.fname}}</a></td>
+    <td>{{std.lname}}</td>
+    <td>{{std.age}}</td>
+    <td>{{std.std_track}}</td>
+    <td>{{std.is_graduated}}</td>
+    <td>
+
+      <a class="btn btn-primary" href="/dept/edit/{{std.id}}">Edit</a>
+    </td>
+    <td><a class="btn btn-danger" href="/dept/delete/{{std.id}}">Delete</a></td>
+  </tr>
+
+  {% endfor %}
+</table>
+{% endblock %}

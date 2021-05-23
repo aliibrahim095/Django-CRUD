@@ -1,0 +1,31 @@
+{% extends 'dept/base.html' %}
+{% load static %}
+{% block title_block %}
+<h1>Welcome {{student.fname }} {{student.lname}}</h1>
+<br/>
+
+ <a href="/dept/allstd">
+    
+
+    <!-- <img src="{% static 'back.png' %}" width="100px" height="100px"/> -->
+    <img src="https://res.cloudinary.com/meanblogger/image/upload/v1620924739/apcrulv8yp1mjqa3hv6w.jpg" width="100px" height="100px"/>
+
+</a>
+<br/>
+
+{% endblock %}
+
+
+{% block main_block %}
+<h4><h2>First Name:</h2><p> {{student.fname}}</p></h4>
+<h4><h2>Last Name:</h2><p> {{student.lname}}</p></h4>
+<h4><h2>Age:</h2><p> {{student.age}}</p></h4>
+<h4><h2>Track:</h2><p> {{student.std_track}}</p></h4>
+<h4><h2>Graduated ?:</h2></h4>
+{% if student.is_graduated %}
+<strong>Graduated</strong>
+{% else %}
+<strong>Not Graduated</strong>
+{% endif %}
+
+{% endblock %}

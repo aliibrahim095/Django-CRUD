@@ -1,0 +1,9 @@
+{% extends 'dept/base.html' %} {% block main_block %}
+<div class="container-fluid">
+  <form method="POST">
+    {% csrf_token %} {{ student_form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Add" />
+    <input class="btn btn-danger" type="reset" value="Clear" />
+  </form>
+</div>
+{% endblock %}
